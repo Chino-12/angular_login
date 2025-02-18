@@ -11,13 +11,19 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  
+
   // Método para iniciar sesión
   login(email: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { email, password });
   }
 
-  // Método para registrar un usuario (opcional)
+  // Método para registrar un usuario 
   register(name: string, email: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, { name, email, password });
+  }
+
+  testEndpoint(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/test`);
   }
 }
