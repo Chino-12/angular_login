@@ -1,10 +1,73 @@
 .login-card {
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.login-card mat-card-header {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-card mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.login-card mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-card mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.login-card mat-form-field .mat-form-field-outline {
+  color: #e0e0e0;
+}
+
+.login-card mat-form-field .mat-form-field-outline-thick {
+  color: #757575;
+}
+
+.login-card button[type="submit"] {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.login-card button[type="submit"]:hover {
+  background-color: #555555;
+}
+
+.login-card mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.login-card mat-card-actions button {
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-card mat-card-actions button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}

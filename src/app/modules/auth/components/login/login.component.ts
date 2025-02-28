@@ -13,34 +13,20 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.testConnection();
+
+  onSubmit() {
+    this.authService.login(this.email, this.password).subscribe(
+      (response: any) => {
+        console.log('Login exitoso', response);
+        localStorage.setItem('token', response.token); 
+        this.router.navigate(['/home']); 
+      },
+      (error) => {
+        console.error('Error en el login', error);
+      }
+    );
   }
 
-  onSubmit(): void {
-    this.authService.login(this.email, this.password).subscribe({
-      next: (response) => {
-        console.log('Login exitoso:', response);
-        this.router.navigate(['/home']);
-      },
-      error: (error) => {
-        console.error('Error en el login:', error);
-      },
-      complete: () => {
-        console.log('Proceso de login completado');
-      }
-    });
-  }
 
-  testConnection(): void {
-    this.authService.testEndpoint().subscribe({
-      next: (response) => {
-        console.log('Respuesta del servidor:', response);
-      },
-      error: (error) => {
-        console.error('Error al conectar con el servidor:', error);
-      }
-    });
-  }
 
 }
